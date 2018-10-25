@@ -1,0 +1,3 @@
+docker inspect --format '{{ .Name }} => {{ .NetworkSettings.IPAddress }}' $(docker ps -a -q)
+docker run -it -p 8080:8080 -e mongoAdd=10.0.75.1 -e mongoPort=27017 -e slaves=172.17.0.3,172.17.0.2 --name ptc ptc13:final
+docker run -dit -p 27017:27017 --name mongo mongo

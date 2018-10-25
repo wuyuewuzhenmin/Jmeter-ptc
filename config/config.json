@@ -1,0 +1,21 @@
+{
+	"maxDurTime": 30,
+	"maxConTasks": 2,
+	"targetMachine":
+		{
+			"host": "10.58.9.185",
+			"user": "root",
+			"pass": "Initial0"
+		},
+
+	"mongoDB": 
+		{
+			"host": "localhost",
+			"port": "27101",
+			"user": null,
+			"pass": null
+		}
+}
+
+
+

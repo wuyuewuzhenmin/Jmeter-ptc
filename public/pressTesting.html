@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>JMeter Test</title>
+
+    <!-- Bootstrap -->
+    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="/vendors/iCheck/skins/flat/blue.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <!-- Dropzone.css -->
+    <link href="/vendors/dropzone/dist/dropzone.css" rel="stylesheet">
+
+    <!-- Ion.RangeSlider -->
+    <link href="/vendors/normalize-css/normalize.css" rel="stylesheet">
+    <link href="/vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+
+    <!-- PNotify -->
+    <link href="/vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="/vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="/vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="/build/css/custom.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>PTC</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2 class="currentUser"></h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="index.html">Dashboard</a></li>
+                    </ul>
+                  </li>
+
+                  <li><a><i class="fa fa-line-chart"></i> Performance Testing <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="pressTesting.html">JMter Test</a></li>
+                    </ul>
+                  </li>                                  
+                </ul>
+              </div>
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons 
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>-->
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/img.jpg" alt="">
+                    <span class="currentUser"></span>
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+
+            <div class="right_col" role="main">
+              <div class="">
+              <div class="page-title">
+                <div class="title_left">
+                  <h3>JMeter Test</h3>
+                </div>
+
+                <div class="title_right">
+                </div>
+              </div>
+
+              <div class="clearfix"></div>
+
+              <!-- modal start-stop-test-dialog-->
+              <div class="start-stoptest--dialog fade in modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-md">
+                  <div class="modal-content">
+
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                      </button>
+                      <h4 class="modal-title" id="myModalLabel2">Launch Test</h4>
+                    </div>
+                    <div class="modal-body">
+                      <div class="ready-section">
+                        <p>You are about to launch a new load test.Your test will automatically terminate according to your test configuration.</p>
+                        <p>Only continue if you have a permission to carry out this load test.</p>
+                        <div class="test-information">
+                          <div class="info">
+                            <strong>Your test will run with following configuration:</strong>
+                              <ul>
+                                <li>
+                                  <i class="ico ico-ok" aria-hidden="true"></i> <span id="eUser">--</span> Total threads
+                                </li>
+
+                                <li>
+                                  <i class="ico ico-ok" aria-hidden="true"></i>Max duration of <span id="eTime">--</span> minutes
+                                </li>
+                              </ul>
+                          </div>
+                        </div>
+                        <p>Click 
+                          <strong>Launch Servers</strong>to start the servers and run
+                        </p>
+                      </div>
+                    </div>
+                  <div class="modal-footer">
+                    <button title="Launch Servers" type="button" class="btn btn-success" id="launchTest" data-dismiss="modal">Launch Servers</button>
+                  </div>
+                </div>
+              </div>                                               
+            </div>
+
+            <!--main part-->
+            <div class="x_panel">
+              <div class="x_title">
+                <div class="col-md-8" style="margin:0">
+                  <form data-parsley-validate id="testBasic" class="form-horizontal form-label-left input_mask">
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Project <span class="required">*</span></label>
+                      <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select class="form-control" name="project" required="required">
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Name <span class="required">*</span></label>
+                      <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input type="text" name="testName" class="form-control" required="required" placeholder="test name">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <ul class="nav navbar-right panel_toolbox">
+                  <li>
+                    <button class="btn btn-primary" data-toggle="modal" data-target=".start-stoptest--dialog" id="saveTest">Save</button>
+                    <button class="btn btn-warning"><a href="/">Cancel</a></button>
+                  </li>
+
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+
+              <div class="x_content">
+                <div class="row">  
+                  <div class="form-horizontal" role="form form-label-left">
+                    <div class="col-md-6 col-sm-12 col-xs-12" style="padding-top: 20px">
+                    <h4>Case upload/Basic configuration</h4>
+                    <form class="dropzone" style="margin-bottom: 15px" id="caseUpload">
+                      <!-- hidden input field, to store new case name(time stampt)-->
+                      <input type="text" name="caseName" class="hidden" id="overideCase" required="required">
+                      <input type="text" name="caseSize" class="hidden" id="caseSize" required="required">
+                      <input type="text" name="caseOriginName" class="hidden" id="caseOriginName" required="required">
+                    </form>
+
+
+                      <div class="form-group">
+                        <div class="checkbox col-sm-2">
+                          <label for="host">
+                            <input type="checkbox" class="flat" checked="checked"> Host
+                          </label>
+                        </div>
+                        <div class="col-sm-4">
+                          <input type="text" name="host" class="form-control" id="overideHost">
+                        </div>
+                        <div class="checkbox col-sm-2">
+                          <label for="port">
+                            <input type="checkbox" class="flat" checked="checked"> Port
+                          </label>
+                        </div>
+                        <div class="col-sm-4">
+                          <input type="number" name="port" class="form-control" id="overidePort">
+                        </div>                        
+                      </div>
+                    </div>   
+
+                    <div class="col-md-6 col-sm-12 col-xs-12" style="padding-top: 20px"> 
+                      <h4> Load Configuration</h4>
+                      <div class="form-group">
+                        <div class="checkbox col-sm-4">
+                          <label for="overideUser">
+                            <input type="checkbox" class="flat" checked="checked" id="users"> Users
+                          </label>
+                        </div>
+
+                        <!--slider-->
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                          <input type="text" class="range_min_max" value="" name="users" id="overideUser"/>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="checkbox col-sm-4">
+                          <label for="overideRampup">
+                            <input type="checkbox" class="flat" checked="checked" id="rampup"> Rampup (min)
+                          </label>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                          <input type="text" class="range_min_max" value="" name="rampup" id="overideRampup"/>
+                        </div>                        
+                      </div>
+
+                      <div class="form-group">
+                        <div class="checkbox col-sm-4">
+                          <label for="overideIteration">
+                            <input type="checkbox" class="flat" checked="checked" id="iteration"> Iteration
+                          </label>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                          <input type="text" class="range_min_max" value="" name="iteration" id="overideIteration"/>
+                        </div>                        
+                      </div>
+
+                      <div class="form-group">
+                        <div class="checkbox col-sm-4">
+                          <label for="overideDuration">
+                            <input type="checkbox" class="flat" checked="checked" id="duration"> Duration(min)
+                          </label>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                          <input type="text" class="range_min_max" value="" name="duration" id="overideDuration"/>
+                        </div> 
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Result Table -->
+            <div class="x_panel">
+              <div class="x_title">
+                <h2>Execution History </h2>              
+                <div class="col-md-8" style="margin:0">
+
+                </div>
+
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div> 
+              
+              <div class="x_content">
+                <div id="tabelWrap">
+                </div>              
+              </div>           
+            </div>
+           </div>
+        <!-- /page content -->
+
+        <!-- footer content
+        <footer>
+          <div class="pull-right">
+            Anywhere PTC
+          </div>
+          <div class="clearfix"></div>
+        </footer>-->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="/vendors/iCheck/icheck.min.js"></script>
+    <!-- Ion.RangeSlider -->
+    <script src="/vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>    
+    <!-- Datatables -->
+    <script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="/vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+    <script src="/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="/vendors/validator/validator.js"></script>
+
+    <!-- Dropzone.js -->
+    <script src="../vendors/dropzone/dist/dropzone.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="/build/js/custom.js"></script>
+
+    <!-- PNotify -->
+    <script src="/vendors/pnotify/dist/pnotify.js"></script>
+    <script src="/vendors/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="/vendors/pnotify/dist/pnotify.nonblock.js"></script>
+    
+    <!-- Custom user Script -->
+    <script type="text/javascript" src="/build/js/user.js"></script>
+    <script type="text/javascript" src="/build/js/jmeterTest.js"></script>
+    <!-- Parsley -->
+    <script src="/vendors/parsleyjs/dist/parsley.min.js"></script>    
+    <!-- slider-->
+    <script>
+      $(document).ready(function(){
+        $("#overideUser").ionRangeSlider({
+          type: "single",
+          min: 1,
+          max: 100,
+          //from: 1,
+          //to: 50,
+          max_interval: 1
+        });
+
+        $("#overideRampup").ionRangeSlider({
+          type: "single",
+          min: 0,
+          max: 120,
+          //from: 1,
+          //to: 50,
+          max_interval: 1
+        });
+
+        $("#overideIteration").ionRangeSlider({
+          type: "single",
+          min: 1,
+          max: 100,
+          //from: 1,
+          //to: 50,
+          max_interval: 1
+        });
+
+        $("#overideDuration").ionRangeSlider({
+          type: "single",
+          min: 0,
+          max: 120,
+          //from: 1,
+          //to: 50,
+          max_interval: 1
+        });
+      })
+    </script>
+    <!--slider end-->
+  </body>
+</html>
